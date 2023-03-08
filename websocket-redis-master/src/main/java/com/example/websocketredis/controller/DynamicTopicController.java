@@ -27,6 +27,6 @@ public class DynamicTopicController {
     @DeleteMapping("deleteTopic")
     public ResponseEntity<String> deleteTopic(@RequestParam String topic) {
         kafkaDynamicTopic.deleteTopicDynamic(topic);
-        return new ResponseEntity("Topic " + topic + " deleted successfully", HttpStatus.NO_CONTENT);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

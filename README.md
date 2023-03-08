@@ -58,3 +58,9 @@ CMD ["java", "-jar", "app.jar"]
 ![](./img/kafka-terminal.PNG)
 
 
+## Demo Chat WebApp
+* When user 1 enters Room 901 to chat
+![](./img/user1-1.PNG)
+
+* User 1 can view the previous message history of Room 901
+![](./img/user1-2.PNG)

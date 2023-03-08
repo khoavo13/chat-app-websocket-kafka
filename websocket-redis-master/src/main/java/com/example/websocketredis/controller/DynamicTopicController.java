@@ -4,6 +4,7 @@ import com.example.websocketredis.config.KafkaDynamicTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DynamicTopicController {
     @Autowired
     private KafkaDynamicTopic kafkaDynamicTopic;
-    @PostMapping("/createTopic")
+    @PostMapping("createTopic")
     public ResponseEntity<String> createTopic(@RequestParam String topic){
         try {
             kafkaDynamicTopic.createTopicDynamic(topic);
@@ -21,5 +22,11 @@ public class DynamicTopicController {
         }
 
         return new ResponseEntity<>("Topic " + topic + " created successfully.", HttpStatus.OK);
+    }
+
+    @DeleteMapping("deleteTopic")
+    public ResponseEntity<String> deleteTopic(@RequestParam String topic) {
+        kafkaDynamicTopic.deleteTopicDynamic(topic);
+        return new ResponseEntity("Topic " + topic + " deleted successfully", HttpStatus.NO_CONTENT);
     }
 }

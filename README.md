@@ -64,3 +64,19 @@ CMD ["java", "-jar", "app.jar"]
 
 * User 1 can view the previous message history of Room 901
 ![](./img/user1-2.PNG)
+
+## Dynamic Topic Kafka
+
+#### Create new topic
+* **Postman**
+ ![](./img/create-postman.PNG) 
+
+* **Docker Desktop**
+  ![](./img/create-dt.PNG)
+
+#### Delete old topic
+* **Postman**
+ ![](./img/delete-post.PNG) 
+
+* **Docker Desktop**
+  ![](./img/delete-dk.PNG)
